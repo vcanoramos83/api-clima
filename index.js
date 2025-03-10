@@ -1,11 +1,13 @@
 require("dotenv").config();
 const express = require("express");
 const axios = require("axios");
-
+const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 3000;
 const API_KEY = process.env.API_KEY;
 const CITY = "Zaragoza"; // Ciudad fija por ahora
+
+app.use(cors());
 
 // Ruta principal
 app.get("/", (req, res) => {
